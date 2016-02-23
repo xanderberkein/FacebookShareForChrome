@@ -6,7 +6,6 @@
 //Copyright (c) Xander Berkein 2016, All Rights Reserved
 //
 
-init();
 
 // On context menu click -- callback
 function shareOnClick(info, tab) {
@@ -40,7 +39,6 @@ function shareOnClick(info, tab) {
 }
 
 
-function init() {
 //creeer context menu aangepast naar hetgeen waarop men klikte
     var contexts = ["page", ["image", "link"]];
 
@@ -53,7 +51,7 @@ function init() {
         }
         var id = chrome.contextMenus.create({"title": title, "contexts": context});
 
-        if (isLoggedIn()) {
+//        if (isLoggedIn()) {
 //2 childs onder het context menu -> share via bericht of op wall
             var title1 = "Share in a message";
             var id1 = "message" + i.toString();
@@ -69,15 +67,15 @@ function init() {
                     {"title": title3, "parentId": id, "id": id3, "contexts": context, "onclick": shareOnClick});
 
             console.log("'" + context + "' item:" + id);
-        }
-        else{
-            var title1 = "Click here to log in to facebook";
-            var id1 = "login" + i.toString();
-            var child1 = chrome.contextMenus.create(
-                    {"title": title1, "parentId": id, "id": id1, "contexts": context, "onclick": logIn()});
-        }
+//        }
+//        else{
+//            var title1 = "Click here to log in to facebook";
+//            var id1 = "login" + i.toString();
+//            var child1 = chrome.contextMenus.create(
+//                    {"title": title1, "parentId": id, "id": id1, "contexts": context, "onclick": logIn()});
+//        }
     }
-}
+
 
 
 var appid = "1708806532697008";
@@ -130,62 +128,62 @@ function share(method, url) {
     }
 }
 
-var inlogurl = "https://www.facebook.com/dialog/oauth?client_id="
-        + appid
-        + "&response_type=token&scope=email,user_friends&display=popup&redirect_uri=http://www.facebook.com/connect/login_success.html";
-
-function logIn(){
-    chrome.windows.create({'url': inlogurl, 'type': 'popup'}, function (window) {
-    });
-
-    var checker = false;
-    //dev
-    var checkNumberOfCalls = 0;
-
-    waitForToken();
-
-    function waitForToken() {
-
-        chrome.tabs.query({url: "https://www.facebook.com/connect/login_success.html*"}, function (arrayOfTabs) {
-            if (arrayOfTabs.length > 0) {
-                checker = true;
-                var params = arrayOfTabs[0].url.split('#')[1];
-                var access = params.split('&')[0].split('=')[1];
-                console.log(access);
-                localStorage.accessToken = access;
-
-//                $("#login").toggle(true);
-//                $("#ingelogd").fadeTo(0, 1);
-//                location.reload();
-                chrome.tabs.remove(arrayOfTabs[0].id);
-            }
-
-        });
-
-        if (!checker) {
-            setTimeout(function () {
-                waitForToken();
-            }, 250);
-        }
-    }
-}
-
-function isLoggedIn() {
-
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (xhttp.readyState == 4) {
-            status = xhttp.status;
-            if (status == 200) {
-                return true;
-            } else
-                return false;
-        }
-
-    };
-
-    xhttp.open("GET", "https://graph.facebook.com/me?fields=picture,first_name&access_token=" + localStorage.accessToken, false);
-    xhttp.send();
-
-}
+//var inlogurl = "https://www.facebook.com/dialog/oauth?client_id="
+//        + appid
+//        + "&response_type=token&scope=email,user_friends&display=popup&redirect_uri=http://www.facebook.com/connect/login_success.html";
+//
+//function logIn(){
+//    chrome.windows.create({'url': inlogurl, 'type': 'popup'}, function (window) {
+//    });
+//
+//    var checker = false;
+//    //dev
+//    var checkNumberOfCalls = 0;
+//
+//    waitForToken();
+//
+//    function waitForToken() {
+//
+//        chrome.tabs.query({url: "https://www.facebook.com/connect/login_success.html*"}, function (arrayOfTabs) {
+//            if (arrayOfTabs.length > 0) {
+//                checker = true;
+//                var params = arrayOfTabs[0].url.split('#')[1];
+//                var access = params.split('&')[0].split('=')[1];
+//                console.log(access);
+//                localStorage.accessToken = access;
+//
+////                $("#login").toggle(true);
+////                $("#ingelogd").fadeTo(0, 1);
+////                location.reload();
+//                chrome.tabs.remove(arrayOfTabs[0].id);
+//            }
+//
+//        });
+//
+//        if (!checker) {
+//            setTimeout(function () {
+//                waitForToken();
+//            }, 250);
+//        }
+//    }
+//}
+//
+//function isLoggedIn() {
+//
+//    var xhttp = new XMLHttpRequest();
+//    xhttp.onreadystatechange = function () {
+//        if (xhttp.readyState == 4) {
+//            status = xhttp.status;
+//            if (status == 200) {
+//                return true;
+//            } else
+//                return false;
+//        }
+//
+//    };
+//
+//    xhttp.open("GET", "https://graph.facebook.com/me?fields=picture,first_name&access_token=" + localStorage.accessToken, false);
+//    xhttp.send();
+//
+//}
 
