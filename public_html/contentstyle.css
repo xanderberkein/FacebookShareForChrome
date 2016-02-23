@@ -3,39 +3,35 @@
     Author     : Xander Berkein
 */
 
-/*.fbse_img:hover{
-    -webkit-filter: blur(5px); 
+#fbs_header{
+    position: relative;
+    z-index: 99999;
+    width: 400px;
+    height: 52px;
+    font-family: sans-serif;
+    font-size: 16px;
+    border: #4ab367 thin solid;
+    background-color: #d1e8c9;
+    margin: 0 auto;
 }
 
-#fbse_hover{
-    position: absolute;
-    background-color: yellow;
-    color: white;
-    pointer-events: none;
-    display: none;
-    width: 170px;
-    height: 60px;
-    vertical-align: middle;
-    font-size: small;
-    z-index: 9999;
-    padding-top: 6px;
-    font-family: "Helvetica", sans-serif;
-  
-    zo ziet de tekstballon <-> clippath eruit
-    1-------2
-    |       |
-    7--6-4--3
-         5
-
-    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 50% 75%, 50% 100%, 40% 75%, 0% 75%);
-    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 50% 75%, 50% 100%, 40% 75%, 0% 75%);
-    border-radius: 7px;
-    background-color: #3b5998;
+#fbs_afbCheck{
+    width: 20px;
+    vertical-align: bottom;
 }
 
-#fbse_hoverp{
+#fbs_check{
     text-align: center;
-    vertical-align: middle;
-}*/
+}
 
+#fbs_dismiss{
+    width:14px;
+    vertical-align: -1px;
+    position: absolute;
+    top: 19px;
+    right: 10px;
+}
 
+#fbs_dismiss:hover{
+    cursor: pointer;
+}

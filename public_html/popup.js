@@ -10,6 +10,7 @@ var appid = "1708806532697008";
 
 $(document).ready(function () {
     loadFacebookData();
+    $("#where").css("display", "inherit");
 });
 
 
@@ -77,11 +78,10 @@ $('#url').change(function () {
 $('#picture').change(function () {
     if (this.checked) {
         $("#please").css("display", "inherit");
-        $("#where").css("display", "none");
     }
     if (!this.checked) {
         $("#please").css("display", "none");
-        $("#where").css("display", "inherit");
+        
     }
 });
 

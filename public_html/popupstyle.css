@@ -101,6 +101,14 @@ span#loginbutton{
     border-radius: 5px;
 }
 
+.visible{
+    display: inherit;
+}
+
+.notvisible{
+    display: none;
+}
+
 /* ANIMATIES */
 
 .clip-animation {
