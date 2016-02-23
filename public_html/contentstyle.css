@@ -1,0 +1,41 @@
+/* 
+    Created on : 20-jan-2016, 14:02:42
+    Author     : Xander Berkein
+*/
+
+/*.fbse_img:hover{
+    -webkit-filter: blur(5px); 
+}
+
+#fbse_hover{
+    position: absolute;
+    background-color: yellow;
+    color: white;
+    pointer-events: none;
+    display: none;
+    width: 170px;
+    height: 60px;
+    vertical-align: middle;
+    font-size: small;
+    z-index: 9999;
+    padding-top: 6px;
+    font-family: "Helvetica", sans-serif;
+  
+    zo ziet de tekstballon <-> clippath eruit
+    1-------2
+    |       |
+    7--6-4--3
+         5
+
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 50% 75%, 50% 100%, 40% 75%, 0% 75%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 50% 75%, 50% 100%, 40% 75%, 0% 75%);
+    border-radius: 7px;
+    background-color: #3b5998;
+}
+
+#fbse_hoverp{
+    text-align: center;
+    vertical-align: middle;
+}*/
+
+

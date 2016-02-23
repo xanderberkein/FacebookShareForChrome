@@ -1,0 +1,121 @@
+/* 
+  This is part of Facebook Share for Chrome
+
+  Written by: Xander Berkein
+
+  Copyright (c) Xander Berkein 2016, All Rights Reserved
+
+*/
+
+
+body{
+    min-width: 200px;
+    min-height: 220px;
+    /*margin: 0;*/
+    font-family: sans-serif;
+    background-color: #EDEDED;
+}
+
+header{
+    margin: -1em -0.7em 0 -0.7em;
+    padding: 0.4em 0.5em 0.1em 0.5em;
+    background-color: #45619D;
+}
+
+h1{
+    color: white;
+    font-size: 1.25em;
+}
+
+img#afb{
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    /*border: #45619D 1px solid;*/
+}
+
+h2{
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 0.25em;
+}
+
+input{
+    vertical-align: bottom;
+}
+
+#please{
+    display: block;
+    font-size: 0.9em;
+    margin-top: 0.5em;
+    padding-left: 2em;
+    margin-left: 1.7em;
+    background: url("Exclamation.png") no-repeat;
+    background-size: 20px;
+    background-position-y: center;
+    display: none;
+}
+
+p.alinea{
+    margin-top: 0em;
+}
+
+ul{
+    margin-top: 0em;
+    margin-left: 0em;
+}
+
+li{
+    margin-left: -1.5em;
+    margin-bottom: 0.2em;
+}
+
+#succesdiv{
+    border-top: grey 1px solid;
+}
+
+#succes{
+    margin-top: 0em;
+    display: none;
+}
+
+.checkmark{
+    width: 20px;
+    -webkit-clip-path: polygon(20% 43%, 20% 43%, 9% 56%, 9% 56%);
+}
+
+#login{
+    display:none;
+    text-align: center;
+    margin-top: 4em;
+
+}
+
+span#loginbutton{
+    background-color: #45619D;
+    background-color: #3b5998;
+    color: white;
+    border: 1px solid #2E4575;
+    cursor: pointer;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+}
+
+/* ANIMATIES */
+
+.clip-animation {
+    -webkit-clip-path: polygon(63% 0, 93% 19%, 43% 92%, 8% 57%);
+    -webkit-animation: "clip" 1s 
+}
+
+@-webkit-keyframes "clip" {
+    0% {
+        -webkit-clip-path: polygon(20% 43%, 20% 43%, 9% 56%, 9% 56%);
+    }
+    50% {
+        -webkit-clip-path: polygon(20% 44%, 55% 79%, 43% 92%, 8% 57%);
+    }
+    100% {
+        -webkit-clip-path: polygon(63% 0, 93% 19%, 43% 92%, 8% 57%);
+    }
+}

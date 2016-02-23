@@ -1,0 +1,55 @@
+<!doctype html>
+<!--
+This is part of Facebook Share for Chrome
+
+Written by: Xander Berkein
+
+Copyright (c) Xander Berkein 2016, All Rights Reserved
+
+-->
+<html>
+    <head>
+        <title>Share on Facebook Extension</title>
+        <link href="popupstyle.css" rel="stylesheet" type="text/css"/>
+        <script src="jquery.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Share on Facebook</h1>
+            <img id="afb">
+        </header>
+        <p id="login">
+            <span id="loginbutton">Log in to Facebook</span>
+        </p>
+        <div id="ingelogd">
+            <p>
+                Hi <span id="name">your name</span>!
+            </p>
+            <h2>What do you want to share?</h2>
+            <p class="alinea">
+                <input type="radio" id="url" name="what" value="url" checked>
+                <label for="url">This page</label><br>
+                <input type="radio" id="picture" name="what" value="picture">
+                <label for="picture">Image/link on this page</label>
+                <span id="please">Right click on the image you want to share, and select "Share this link/image on Facebook".</span>
+            </p>
+            <div id="where">
+            <h2>Where do you want to share?</h2>
+            <ul>
+                <li id="message">Share in a message to a friend</li>
+                <li id="post">Share on my/someone's wall</li>
+            </ul>
+            </div>
+            <div id="succesdiv">
+            <p id="succes">
+                <img src="CheckmarkGreenKlein.png" alt="checkmark" class="checkmark"/>
+                Shared
+            </p>
+            </div>
+            
+            
+        </div>
+        <script src="popup.js"></script>
+    </body>
+</html>
+
