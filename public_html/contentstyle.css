@@ -4,23 +4,32 @@
 */
 
 #fbs_header{
-    position: relative;
+    position: fixed;
+    top: 20px;
     z-index: 99999;
     width: 400px;
     height: 52px;
-    font-family: sans-serif;
+    font-family: Arial, sans-serif;
     font-size: 16px;
     border: #4ab367 thin solid;
     background-color: #d1e8c9;
     margin: 0 auto;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: none;
 }
 
 #fbs_afbCheck{
     width: 20px;
     vertical-align: bottom;
+    padding: 0;
+    margin: 0;
 }
 
 #fbs_check{
+    margin: 0 auto;
+    margin-top: 16px;
+    padding: 0;
     text-align: center;
 }
 

@@ -6,11 +6,15 @@
 //Copyright (c) Xander Berkein 2016, All Rights Reserved
 //
 
+var tabShared;
 
 // On context menu click -- callback
 function shareOnClick(info, tab) {
     //bepaal url van wat geshared moet worden
     var url;
+    console.log("dit is het:::::" + tab + tab.id + tab.url);
+//    localStorage.tabShared = tab.id;
+    tabShared = tab;
 
     if (info.srcUrl != null) {
         url = info.srcUrl;
@@ -40,34 +44,34 @@ function shareOnClick(info, tab) {
 
 
 //creeer context menu aangepast naar hetgeen waarop men klikte
-    var contexts = ["page", ["image", "link"]];
+var contexts = ["page", ["image", "link"]];
 
-    for (var i = 0; i < contexts.length; i++) {
-        var context = [contexts[i]];
-        var title = "Share this " + context + " on Facebook!";
-        if (i === 1) {
-            context = contexts[i];
-            title = "Share this image/link on Facebook!";
-        }
-        var id = chrome.contextMenus.create({"title": title, "contexts": context});
+for (var i = 0; i < contexts.length; i++) {
+    var context = [contexts[i]];
+    var title = "Share this " + context + " on Facebook!";
+    if (i === 1) {
+        context = contexts[i];
+        title = "Share this image/link on Facebook!";
+    }
+    var id = chrome.contextMenus.create({"title": title, "contexts": context});
 
 //        if (isLoggedIn()) {
 //2 childs onder het context menu -> share via bericht of op wall
-            var title1 = "Share in a message";
-            var id1 = "message" + i.toString();
-            var title2 = "Share on my/someones wall";
-            var id2 = "wall" + i.toString();
-            var title3 = "Copy link to clipboard";
-            var id3 = "copy" + i.toString();
-            var child1 = chrome.contextMenus.create(
-                    {"title": title1, "parentId": id, "id": id1, "contexts": context, "onclick": shareOnClick});
-            var child2 = chrome.contextMenus.create(
-                    {"title": title2, "parentId": id, "id": id2, "contexts": context, "onclick": shareOnClick});
-            var child3 = chrome.contextMenus.create(
-                    {"title": title3, "parentId": id, "id": id3, "contexts": context, "onclick": shareOnClick});
+    var title1 = "Share in a message";
+    var id1 = "message" + i.toString();
+    var title2 = "Share on my/someones wall";
+    var id2 = "wall" + i.toString();
+    var title3 = "Copy link to clipboard";
+    var id3 = "copy" + i.toString();
+    var child1 = chrome.contextMenus.create(
+            {"title": title1, "parentId": id, "id": id1, "contexts": context, "onclick": shareOnClick});
+    var child2 = chrome.contextMenus.create(
+            {"title": title2, "parentId": id, "id": id2, "contexts": context, "onclick": shareOnClick});
+    var child3 = chrome.contextMenus.create(
+            {"title": title3, "parentId": id, "id": id3, "contexts": context, "onclick": shareOnClick});
 
-            console.log("'" + context + "' item:" + id);
-    }
+    console.log("'" + context + "' item:" + id);
+}
 
 
 
@@ -109,6 +113,13 @@ function share(method, url) {
                 chrome.runtime.sendMessage({
                     share: "success"
                 });
+//                chrome.tabs.query({active: true}, function (tabs) {
+//                    console.log(tabs[0].url);
+//                    chrome.tabs.sendMessage(tabs[0].id, {share: "success"});
+//                });
+                chrome.tabs.sendMessage(tabShared.id, {shareIt: "success"});
+                console.log("dit is het twee: " + tabShared.id + tabShared.url)
+
             }
 
         });

@@ -5,19 +5,15 @@
 //Copyright (c) Xander Berkein 2016, All Rights Reserved
 //
 
-//$('body').append($("<div>").css("id","fbs_header")
-//        .append($("<p>").css("id","fbs_check")
-//            .append($("img").css("src","CheckmarkGreenKlein").css("id","fbs_afbCheck"))
-//            .text("Successfully shared on Facebook!"))
-//            .append($("<img>").css("src","cancelgrey.png").css("id","fbs_dismiss")));
-    
-$("body").append('<div id="fbs_header"><p id="fbs_check"><img src="CheckmarkGreenKlein.png" alt="afbCheck" id="fbs_afbCheck"/>Successfully shared on Facebook!</p><img src="cancelgrey.png" alt="" id="fbs_dismiss"/></div>');
 
-var checkmark = chrome.extension.getURL("CheckmarkGreenKlein.png");
-$("#fbs_afbCheck").src = checkmark;
+$("body").append('<div id="fbs_header"><p id="fbs_check"><img src="CheckmarkGreenKlein.png" alt="afbCheck" id="fbs_afbCheck"/>Successfully shared on Facebook!</p><img src="cancelgrey.png" alt="cancel" id="fbs_dismiss"/></div>');
 
-var cancel = chrome.extension.getUrl("cancelgrey.png");
-$("#fbs_dismiss").src = cancel;
+var checkmark = chrome.extension.getURL("images/CheckmarkGreenKlein.png");
+
+$("#fbs_afbCheck").attr("src", checkmark);
+
+var cancel = chrome.extension.getURL("images/cancelgrey.png");
+$("#fbs_dismiss").attr("src", cancel);
 
 //<div id="fbs_header">
 //            <p id="fbs_check">
@@ -26,3 +22,24 @@ $("#fbs_dismiss").src = cancel;
 //            </p>
 //        <img src="cancelgrey.png" alt="" id="fbs_dismiss"/>
 //        </div>
+
+
+//listen for image = true
+chrome.runtime.onMessage.addListener(
+        function (request, sender, sendResponse) {
+            if (request.shareIt == "success") {
+                fbs_showSuccesHeader();
+            }
+        }
+);
+
+$("#fbs_dismiss").on("click", function () {
+    $("#fbs_header").slideUp();
+});
+
+function fbs_showSuccesHeader() {
+    $("#fbs_header").slideDown();
+    setTimeout(function () {
+        $("#fbs_header").slideUp();
+    }, 5000);
+}
