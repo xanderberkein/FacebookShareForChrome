@@ -113,10 +113,7 @@ function share(method, url) {
                 chrome.runtime.sendMessage({
                     share: "success"
                 });
-//                chrome.tabs.query({active: true}, function (tabs) {
-//                    console.log(tabs[0].url);
-//                    chrome.tabs.sendMessage(tabs[0].id, {share: "success"});
-//                });
+                //send message to right tab: shareIt: success
                 chrome.tabs.sendMessage(tabShared.id, {shareIt: "success"});
                 console.log("dit is het twee: " + tabShared.id + tabShared.url)
 

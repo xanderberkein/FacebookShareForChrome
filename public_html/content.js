@@ -24,7 +24,7 @@ $("#fbs_dismiss").attr("src", cancel);
 //        </div>
 
 
-//listen for image = true
+//listen for shareIt = success
 chrome.runtime.onMessage.addListener(
         function (request, sender, sendResponse) {
             if (request.shareIt == "success") {

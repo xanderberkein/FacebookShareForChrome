@@ -1,6 +1,6 @@
 {
     "manifest_version": 2,
-    "name": "Share on Facebook",
+    "name": "Facebook Share for Chrome",
     "description": "This extension lets you share websites, pictures or links with your friends on Facebook!",
     "version": "1.0",
     "background": {
