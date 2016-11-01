@@ -6,7 +6,7 @@ By right clicking on an image, link or anywhere on the page you want to share, y
 
 ## Install
 
-To install the extension, *drag the FacebookShareForChrome1-0.crx*-file into an open Chrome window. Accept the Chrome-warning and the extension is ready to use.
+To install the extension, drag the *FacebookShareForChrome1-0.crx*-file into an open Chrome window. Accept the Chrome-warning and the extension is ready to use.
 
 ## Source files
 To compile your own version of this extension, you will need a [Facebook app id](https://developers.facebook.com/apps/). Insert your app id in "config.js". For example: 
