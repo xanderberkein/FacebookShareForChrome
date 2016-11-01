@@ -15,13 +15,16 @@ $("#fbs_afbCheck").attr("src", checkmark);
 var cancel = chrome.extension.getURL("images/cancelgrey.png");
 $("#fbs_dismiss").attr("src", cancel);
 
-//<div id="fbs_header">
-//            <p id="fbs_check">
-//            <img src="CheckmarkGreenKlein.png" alt="afbCheck" id="fbs_afbCheck"/>
-//            Successfully shared on Facebook!
-//            </p>
-//        <img src="cancelgrey.png" alt="" id="fbs_dismiss"/>
-//        </div>
+// source confirmation message
+
+// <div id="fbs_header">
+//             <p id="fbs_check">
+//             <img src="CheckmarkGreenKlein.png" alt="afbCheck" id="fbs_afbCheck"/>
+//             Successfully shared on Facebook!
+//             </p>
+//         <img src="cancelgrey.png" alt="" id="fbs_dismiss"/>
+//         </div> 
+
 
 
 //listen for shareIt = success

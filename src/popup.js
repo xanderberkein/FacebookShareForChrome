@@ -6,7 +6,8 @@
 //Copyright (c) Xander Berkein 2016, All Rights Reserved
 //
 
-var appid = "1708806532697008";
+var appid = config.appid;
+
 
 $(document).ready(function () {
     loadFacebookData();
@@ -25,6 +26,7 @@ $("#login").on("click", function () {
     });
 
     var checker = false;
+
     //dev
     var checkNumberOfCalls = 0;
 
@@ -95,7 +97,6 @@ $("#message").on("click", function () {
 
     });
 
-
 });
 
 
@@ -114,9 +115,6 @@ $("#post").on("click", function () {
 
 
 function loadFacebookData() {
-
-//https://graph.facebook.com/me/picture?access_token=
-//https://graph.facebook.com/me?fields=id,name,first_name,picture&access_token=CAAYSJoZAfC7ABAG5ajMWtAl1ntRdEZBF7UtgcN45KKamVyEvCTOweqclWFP1IheV37UDO7LSZBU2nVfRwJhZBNY3VBeP1Og7zf9NHRdlO3HIrZCUV1pj6ggZBZBREXsyJZCHF58SikOI8ZAeq7u2XJe1sc6ZAwjUZAAhQrg829sO2Oao17e5e4BadGsSwtGUsloRqUH5gZAOYdatDgZDZD
 
     var data;
 

@@ -10,10 +10,8 @@ var tabShared;
 
 // On context menu click -- callback
 function shareOnClick(info, tab) {
-    //bepaal url van wat geshared moet worden
+    // bepaal url van wat geshared moet worden
     var url;
-    console.log("dit is het:::::" + tab + tab.id + tab.url);
-//    localStorage.tabShared = tab.id;
     tabShared = tab;
 
     if (info.srcUrl != null) {
@@ -55,7 +53,6 @@ for (var i = 0; i < contexts.length; i++) {
     }
     var id = chrome.contextMenus.create({"title": title, "contexts": context});
 
-//        if (isLoggedIn()) {
 //2 childs onder het context menu -> share via bericht of op wall
     var title1 = "Share in a message";
     var id1 = "message" + i.toString();
@@ -74,8 +71,7 @@ for (var i = 0; i < contexts.length; i++) {
 }
 
 
-
-var appid = "1708806532697008";
+var appid = config.appid;
 
 var messageurl = "http://www.facebook.com/dialog/send?app_id=" + appid + "&display=popup&link=";
 
@@ -116,9 +112,7 @@ function share(method, url) {
                 //send message to right tab: shareIt: success
                 chrome.tabs.sendMessage(tabShared.id, {shareIt: "success"});
                 console.log("dit is het twee: " + tabShared.id + tabShared.url)
-
             }
-
         });
 
         if (!checker) {
