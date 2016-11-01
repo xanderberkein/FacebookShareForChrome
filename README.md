@@ -2,7 +2,9 @@
 
 Facebook Share for Chrome is a Chrome extension that makes it easy to share a page, image or link with your friends on Facebook. 
 
-By right clicking on an image, link or anywhere on the page you want to share, you get the possibility to share the content via personal message or by sharing it on someones wall. You can also copy the link of the image/page you want to share, and manually send it to them.
+By right clicking on an image, link or anywhere on the page you want to share, you get the possibility to share the content via personal message or by sharing it on someone's wall. You can also copy the link of the image/page you want to share, and manually send it to them.
+
+The extension also generates a little icon next to the urlbar in Chrome. Clicking on the icon makes you able to login to Chrome and it lets you share the page you are visiting in a message or on someone's wall.
 
 ## Install
 
